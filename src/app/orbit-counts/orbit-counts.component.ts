@@ -17,9 +17,7 @@ export class OrbitCountsComponent implements OnInit {
 
   count(type: string): number {
     return this.satellites.reduce((sum: number, satellite: Satellite) => {
-      if (type === '') return sum += 1
-
-      if (satellite.type.toLowerCase() === type.toLowerCase()) {
+      if (satellite.type.toLowerCase() === type.toLowerCase() || type === '') {
         return sum += 1
       } else {
         return sum
